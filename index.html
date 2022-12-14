@@ -15,13 +15,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 bg-light">
+            <div class="col-sm-8 my-3 bg-light">
                 <h4 class="pt-1"><strong>Search for a City:</strong></h4>
                 
                 <div class="input-group mb-3">
                     <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
                     <div class="input-group-append">
-                        <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
+                        <button class=" btn bg-primary text-light" id="search-button"><i class="fa-fa-search"></i></button>
                     </div>
                 </div>
                 <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
@@ -36,7 +36,7 @@
                         <p>Temperature:<span class="current" id="temperature"></span></p>
                         <p>Humidity:<span class="current" id="humidity"></span></p> 
                         <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
-                        <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+                        <p>UV index:<span class="current bg-yellow rounded py-2 px-2 text-black" id="uv-index"></span></p> 
                     </div>
                 </div>
             
@@ -52,7 +52,7 @@
                         <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
                             <p id="fDate1"></p>
                             <p id="fImg1"></p>
-                            <p>Temp:<span id="fTemp1"></span></p>
+                            <p>Temp:<span id=" fTemp1"></span></p>
                             <p>Humidity:<span id="fHumidity1"></span></p>
                         </div>
                         <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
@@ -81,11 +81,8 @@
     </div>
 		<footer class="fixed-bottom text-center bg-light">
 			Weather Dashboard &copy 2022
-			<link
-				rel="stylesheet"
-				type="text/css"
-				href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-			/>
+			<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 			Made <i class="icon ion-heart"></i> By
 			<a href="https://github.com/E11Evated/weather-dashbord.git" target="blank">
 				John Schoppmann</a

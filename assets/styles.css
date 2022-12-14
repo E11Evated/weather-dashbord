@@ -4,9 +4,9 @@
 }
 
 body {
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
-    
+    background-color: grey;
 }
 h3{
     font-weight: bold;
@@ -20,4 +20,24 @@ span{
 li:hover{
     background-color: lightslategray;
     text-decoration: underline;
+}
+footer {
+    margin-top: 20px;
+}
+
+#current-weather {
+    background-color: #f8f9fa;
+}
+
+.current.bg-yellow.rounded.py-2.px-2.text-black {
+    background-color: yellow;
+    color: black;
+  }
+
+
+.jumbotron {
+    background-image: url("https://wallpapercave.com/wp/qQa5Pd7.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 300px;
 }

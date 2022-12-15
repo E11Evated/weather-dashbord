@@ -22,7 +22,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Submission
 
-Deployed URL: https://e11evated.github.io/work-day-scheduler/
+Deployed URL:  https://e11evated.github.io/weather-dashbord
 <br>
 GitHub Repo URL: https://github.com/E11Evated/work-day-scheduler.git - https://github.com/E11Evated/work-day-scheduler
 

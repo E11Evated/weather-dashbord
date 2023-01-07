@@ -5,13 +5,13 @@ var searchCity = $("#search-city");
 var searchButton = $("#search-button");
 var clearButton = $("#clear-history");
 var currentCity = $("#current-city");
-var currentTemperature = $("#temperature");
-var currentHumidty= $("#humidity");
-var currentWSpeed=$("#wind-speed");
-var currentUvindex= $("#uv-index");
+var todayTemerature = $("#temperature");
+var searchHumidity= $("#humidity");
+var windSpeed=$("#wind-speed");
+var uvIndex= $("#uv-index");
 var sCity=[];
 
-function findCityInArray(c){
+function searchCity(c){
     for (var i=0; i<sCity.length; i++){
         if(c.toUpperCase()===sCity[i]){
             return -1;
@@ -45,11 +45,11 @@ function currentWeather(city){
         
 
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-        $(currentTemperature).html((tempF).toFixed(2)+"&#8457");
-        $(currentHumidty).html(response.main.humidity+"%");
+        $(todayTemerature).html((tempF).toFixed(2)+"&#8457");
+        $(searchHumidity).html(response.main.humidity+"%");
         var ws=response.wind.speed;
         var windsmph=(ws*2.237).toFixed(1);
-        $(currentWSpeed).html(windsmph+"MPH");
+        $(windSpeed).html(windsmph+"MPH");
         UVIndex(response.coord.lon,response.coord.lat);
         forecast(response.id);
         if(response.cod==200){
@@ -63,7 +63,7 @@ function currentWeather(city){
                 addToList(city);
             }
             else {
-                if(findCityInArray(city)>0){
+                if(searchCity(city)>0){
                     sCity.push(city.toUpperCase());
                     localStorage.setItem("cityname",JSON.stringify(sCity));
                     addToList(city);
@@ -80,7 +80,7 @@ function UVIndex(ln,lt){
             url:uvqURL,
             method:"GET"
             }).then(function(response){
-                $(currentUvindex).html(response.value);
+                $(uvIndex).html(response.value);
             });
 }
     
@@ -117,7 +117,7 @@ function addToList(c){
     $(".list-group").append(listEl);
 }
 
-function invokePastSearch(event){
+function pastSearch(event){
     var liEl=event.target;
     if (event.target.matches("li")){
         city=liEl.textContent.trim();
@@ -150,6 +150,6 @@ function clearHistory(event){
 }
 
 $("#search-button").on("click",displayWeather);
-$(document).on("click",invokePastSearch);
+$(document).on("click",pastSearch);
 $(window).on("load",loadlastCity);
 $("#clear-history").on("click",clearHistory);
